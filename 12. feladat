@@ -1,0 +1,42 @@
+try:
+    szamsor=(input("Adjon meg egy számsorozatot!"))
+    k=([int(i) for i in str(szamsor)])
+
+    print(k)
+
+    def leghosszabbalternalo(szamok):
+        leghosszabb=1
+        listaleghosszabb=[]
+        i=0
+        sorozat=[]
+        sorozat.append(szamok[i])
+        sorozatok=[]
+        n=len(szamok)
+
+        if len(szamok)==1:
+            return 1,szamok
+
+        while i<n-1:
+
+            if szamok[i]%2!=szamok[i+1]%2:
+                leghosszabb=leghosszabb+1
+                sorozat.append(szamok[i+1])
+            else:
+                listaleghosszabb.append(leghosszabb)
+                leghosszabb=1
+                sorozatok.append(sorozat)
+                sorozatok.append("0")
+                sorozat=[]
+                sorozat.append(szamok[i+1])
+
+            i+=1
+            listaleghosszabb.append(leghosszabb)
+            sorozatok.append(sorozat)
+
+        return  max(listaleghosszabb),max(sorozatok,key=len)
+
+    print("A leghosszabb sorozat hossza és annak számai:",leghosszabbalternalo(k))
+except:
+    print("Egy számsort adjon meg!")
+
+
