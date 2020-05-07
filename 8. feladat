@@ -1,0 +1,29 @@
+#N a házifeladatok száma
+#B a szünet ideje (percben)
+#M a házifeladat megoldásának ideje
+try:
+    t_szama=int(input("Kérem adja meg a tesztesetek számát!"))
+    i=0
+except:
+    print("Kérem számot adjon meg!")
+while t_szama!=0:
+    try:
+        nbm=input("Adja meg az N, B, M,-t!")
+        n,b,m=nbm.split(" ")
+        ido=0
+        while n!=0:
+            if int(n)%2==0:
+                ido+=(int(n)/2)*int(m)
+                ido+=int(b)
+                n=int(n)/2
+                m=2*int(m)
+            else:
+                ido+=(int(n)+1)/2*int(m)
+                ido+=int(b)
+                n=(int(n)-1)/2
+                m=2*int(m)
+        ido-=int(b)
+        print("A szükséges idő:",ido,"perc")
+        t_szama-=1
+    except:
+        print(("Kérem 3db számot adjon meg szóközzel elválasztva!"))
