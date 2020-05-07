@@ -1,0 +1,24 @@
+try:
+    t_szam=int(input("Adja meg a tesztesetek számát!"))
+except:
+    print("Kérem egy egész számot adjon meg!")
+while t_szam!=0:
+    try:
+        g_szam=(int(input("Adja meg a golyók számát!")))
+        if g_szam<3:
+            print("0")
+            t_szam-=1
+        else:
+            p_szam = 2
+            i=3
+            while True:
+                g_szam-=3
+                if g_szam-i>=0:
+                    p_szam+=1
+                    i += 1
+                else:
+                    break
+            print(p_szam)
+            t_szam-=1
+    except:
+        print("Kérem egy egész számot adjon meg!")
