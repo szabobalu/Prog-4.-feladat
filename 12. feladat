@@ -2,7 +2,6 @@ try:
     szamsor=(input("Adjon meg egy számsorozatot!"))
     k=([int(i) for i in str(szamsor)])
 
-    print(k)
 
     def leghosszabbalternalo(szamok):
         leghosszabb=1
@@ -35,7 +34,8 @@ try:
 
         return  max(listaleghosszabb),max(sorozatok,key=len)
 
-    print("A leghosszabb sorozat hossza és annak számai:",leghosszabbalternalo(k))
+    x,y=(leghosszabbalternalo(k))
+    print("A {sorozat} sorozatban a {alternalo} páratlan páros alternál {karakter} hosszúsággal.".format(sorozat=szamsor,alternalo=y,karakter=x))
 except:
     print("Egy számsort adjon meg!")
 
