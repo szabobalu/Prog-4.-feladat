@@ -11,10 +11,11 @@ while t_szam!=0:
         else:
             p_szam = 2
             i=3
+            g_szam-=3
             while True:
-                g_szam-=3
                 if g_szam-i>=0:
                     p_szam+=1
+                    g_szam -= i
                     i += 1
                 else:
                     break
