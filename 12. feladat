@@ -32,11 +32,12 @@ try:
             listaleghosszabb.append(leghosszabb)
             sorozatok.append(sorozat)
 
-        return  max(listaleghosszabb),max(sorozatok,key=len)
+
+        sztring = ''.join(str(e) for e in (max(sorozatok, key=len)))
+        return  max(listaleghosszabb),sztring
 
     x,y=(leghosszabbalternalo(k))
-    sztring = ''.join(str(e) for e in y)
-    print("A {sorozat} sorozatban a {alternalo} páratlan páros alternál {karakter} hosszúsággal.".format(sorozat=szamsor,alternalo=sztring,karakter=x))
+    print("A {sorozat} sorozatban a {alternalo} páratlan páros alternál {karakter} hosszúsággal.".format(sorozat=szamsor,alternalo=y,karakter=x))
 except:
     print("Egy számsort adjon meg!")
 
